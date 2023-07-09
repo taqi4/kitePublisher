@@ -6,7 +6,6 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const { setInterval } = require('timers/promises');
 
 var app = express();
 require("dotenv").config();
