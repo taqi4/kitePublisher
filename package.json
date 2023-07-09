@@ -3,7 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "build" : "pkg -t node14-win-arm64 ./bin/www"
+  },
+  "pkg": {
+    "scripts": "build/**/*.js",
+    "assets": "views/**/*",
+    "targets": [ "node14-linux-arm64" ],
+    "outputPath": "dist"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -13,6 +20,7 @@
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1",
-    "nodemailer": "^6.7.2"
+    "nodemailer": "^6.7.2",
+    "pkg": "^5.8.1"
   }
 }
